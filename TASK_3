@@ -1,0 +1,41 @@
+Automation with Python Scripts – Move JPG Files from One Folder to Another
+
+Project Description :
+
+This project automates the process of organizing image files using Python. The script scans a source folder, identifies all files with the .jpg extension, and automatically moves them to a specified destination folder. If the destination folder does not already exist, the program creates it before transferring the files. 
+
+This eliminates the need for manually sorting images, saving both time and effort.
+
+The project makes use of Python's built-in os module to access directories and list files, and the shutil module to move files safely between folders. It also demonstrates the use of loops, conditional statements, and basic file handling techniques.
+
+Applications :
+• Organizing downloaded images.
+• Sorting photos into separate folders.
+• Managing image collections automatically.
+• Reducing manual file management work.
+
+Python Program:
+
+import os
+import shutil
+
+source="Images"
+
+destination="MovedImages"
+
+os.makedirs(destination,exist_ok=True)
+
+for file in os.listdir(source):
+
+    if file.endswith(".jpg"):
+
+        shutil.move(
+            os.path.join(source,file),
+            os.path.join(destination,file)
+        )
+
+print("All JPG files moved.")
+
+Example Output :
+
+All JPG files moved.
